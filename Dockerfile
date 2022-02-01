@@ -14,7 +14,8 @@ COPY . .
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
-RUN pip3 install spacy download en_core_web_sm
+RUN python -m spacy download en_core_web_sm
+RUN python -m nltk.downloader popular
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
